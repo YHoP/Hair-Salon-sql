@@ -46,8 +46,8 @@ public class Stylist {
     try(Connection con = DB.sql2o.open()) {
       String sql ="INSERT INTO stylists (first_name, last_name) VALUES (:first_name, :last_name)";
       this.id = (int) con.createQuery(sql,true)
-      .addParameter("first_name", this.first_name)
-      .addParameter("last_name", this.last_name)
+      .addParameter("first_name", first_name)
+      .addParameter("last_name", last_name)
       .executeUpdate()
       .getKey();
     }
@@ -87,7 +87,7 @@ public class Stylist {
        con.createQuery(sql)
          .addParameter("first_name", first_name)
          .addParameter("last_name", last_name)
-         .addParameter("id", this.id)
+         .addParameter("id", id)
          .executeUpdate();
     }
   }

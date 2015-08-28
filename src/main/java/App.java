@@ -92,6 +92,8 @@ public class App {
     HashMap<String, Object> model = new HashMap<String, Object>();
     Client thisClient = Client.find(Integer.parseInt(request.params(":id")));
     model.put("client", thisClient);
+    model.put("stylists", Stylist.all());
+    model.put("services", Service.all());
     model.put("template", "templates/client_update.vtl");
     return new ModelAndView(model, layout);
   }, new VelocityTemplateEngine());
@@ -101,6 +103,8 @@ public class App {
     int client_id = Integer.parseInt(request.params(":id"));
     Client thisClient = Client.find(client_id);
     model.put("client", thisClient);
+    model.put("stylists", Stylist.all());
+    model.put("services", Service.all());
     response.redirect("/clients/" + client_id);
     return null;
   });

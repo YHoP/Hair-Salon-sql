@@ -113,7 +113,7 @@ public class Client {
         .addParameter("last_name", last_name)
         .addParameter("stylist_id", stylist_id)
         .addParameter("service_id", service_id)
-        .addParameter("id", this.id)
+        .addParameter("id", id)
         .executeUpdate();
     }
   }
