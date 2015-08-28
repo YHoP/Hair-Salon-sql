@@ -1,0 +1,38 @@
+<h2>$stylist.getFirstName() $stylist.getLastName()</h2>
+<h3>Add new client</h3>
+
+<form action="/stylists/$stylist.getId()/newClient" method="post">
+<div class="form-group">
+  <label for="firstName">First name: </label>
+  <input id="first_name" name="first_name" type="text">
+
+  <label for="lastName">Last name: </label>
+  <input id="last_name" name="last_name" type="text">
+
+  <label for="service">Requests service: </label>
+  <select id="service_id" name="service_id" type="text">
+    #foreach($service in $services)
+      <option value="$service.getId()">$service.getService()</option>
+    #end
+  </select>
+  <button type="submit" class="btn btn-success">Submit</button>
+</div>
+</form>
+<br>
+<table class="table">
+  <tr>
+    <td></td>
+    <td>Client</td>
+    <td>Requests service</td>
+    <td></td>
+  </tr>
+  #foreach($client in $clients)
+  <tr>
+    <td><a href="/clients/$client.getId()/edit">EDIT</a></td>
+    <td><a href="/clients/$client.getId()">$client.getFirstName() $client.getLastName()</a></td>
+    <td><a href="/stylists/$client.getStylistId()">$client.getStylistName()</a></td>
+    <td><a href="/services"></a>$client.getServiceDescription()</a></td>
+    <td><a href="/clients/$client.getId()/delete">DELETE</a></td>
+  </tr>
+  #end
+</table>

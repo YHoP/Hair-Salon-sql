@@ -1,0 +1,23 @@
+<h2>services List</h2>
+<h3>Add new service:</h3>
+
+<form action="/services/new" method="post">
+<div class="form-group">
+  <label for="service">Service : </label>
+  <input id="service" name="service" type="text">
+  <button type="submit" class="btn btn-success">Submit</button>
+</div>
+</form>
+<br>
+<table class="table">
+  <tr>
+    <td>Services</td>
+    <td class="center">Client Count</td>
+  </tr>
+  #foreach($service in $services)
+  <tr>
+    <td>$service.getService()</td>
+    <td class="center">$service.count()</td>
+  </tr>
+  #end
+</table>

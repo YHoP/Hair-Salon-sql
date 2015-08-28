@@ -1,0 +1,30 @@
+<h2>Stylists List</h2>
+<h3>Add new stylist:</h3>
+
+<form action="/stylists/new" method="post">
+<div class="form-group">
+
+  <label for="firstName">First name: </label>
+  <input id="first_name" name="first_name" type="text">
+
+  <label for="lastName">  Last name: </label>
+  <input id="last_name" name="last_name" type="text">
+
+  <button type="submit" class="btn btn-success">Submit</button>
+</div>
+</form>
+<br>
+<table class="table">
+  <tr>
+    <td></td>
+    <td>Stylist Name</td>
+    <td class="center">Client Count</td>
+  </tr>
+  #foreach($stylist in $stylists)
+  <tr>
+    <td><a href="/stylists/$stylist.getId()/edit">EDIT</a></td>
+    <td><a href="/stylists/$stylist.getId()">$stylist.getFirstName() $stylist.getLastName()</a></td>
+    <td class="center">$stylist.count()</td>
+  </tr>
+  #end
+</table>

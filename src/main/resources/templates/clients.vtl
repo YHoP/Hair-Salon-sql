@@ -1,0 +1,20 @@
+<h3>Clients List</h3>
+
+<table class="table">
+  <tr>
+    <td></td>
+    <td>Client</td>
+    <td>Preferred stylist</td>
+    <td>Requests service</td>
+    <td></td>
+  </tr>
+#foreach($client in $clients)
+<tr>
+  <td><a href="/clients/$client.getId()/edit">EDIT</a></td>
+  <td><a href="/clients/$client.getId()">$client.getFirstName() $client.getLastName()</a></td>
+  <td><a href="/stylists/$client.getStylistId()">$client.getStylistName()</a></td>
+  <td>$client.getServiceDescription()</td>
+  <td><a href="/clients/$client.getId()/delete">DELETE</a></td>
+</tr>
+#end
+</table>
