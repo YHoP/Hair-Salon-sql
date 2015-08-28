@@ -76,8 +76,8 @@ public class StylistTest {
       firstStylist.save();
       Stylist secondStylist = new Stylist("Bob", "Minion");
       secondStylist.save();
-      firstStylist.delete();
-      assertTrue(!Stylist.all().contains("Mark"));
+      secondStylist.delete();
+      assertTrue(!Stylist.all().contains(secondStylist));
     }
 
 }

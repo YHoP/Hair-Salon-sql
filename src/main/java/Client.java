@@ -96,15 +96,6 @@ public class Client {
     }
   }
 
-  public void delete() {
-    try(Connection con = DB.sql2o.open()) {
-      String sql = "DELETE FROM clients WHERE id=:id;";
-      con.createQuery(sql)
-        .addParameter("id", id)
-        .executeUpdate();
-    }
-  }
-
   public void update(String first_name, String last_name, int stylist_id, int service_id) {
     try(Connection con = DB.sql2o.open()) {
       String sql = "UPDATE clients SET first_name=:first_name, last_name=:last_name, stylist_id=:stylist_id, service_id=:service_id WHERE id=:id";
@@ -118,4 +109,13 @@ public class Client {
     }
   }
 
+
+  public void delete() {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "DELETE FROM clients WHERE id=:id;";
+      con.createQuery(sql)
+        .addParameter("id", id)
+        .executeUpdate();
+    }
+  }
 }
