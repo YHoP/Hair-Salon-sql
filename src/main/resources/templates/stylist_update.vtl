@@ -1,6 +1,6 @@
 <h2>$stylist.getFirstName() $stylist.getLastName()</h2>
 
-<form action="/stylists/$stylist.getId/update" method="post">
+<form action="/stylists/$stylist.getId()/update" method="post">
 <div class="form-group">
   <label for="first_name">First name: </label>
   <input id="first_name" name="first_name" type="text" value="$stylist.getFirstName()">

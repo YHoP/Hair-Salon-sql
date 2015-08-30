@@ -16,13 +16,11 @@
 <br>
 <table class="table">
   <tr>
-    <td></td>
     <td>Stylist Name</td>
     <td class="center">Client Count</td>
   </tr>
   #foreach($stylist in $stylists)
   <tr>
-    <td><a href="/stylists/$stylist.getId()/edit">EDIT</a></td>
     <td><a href="/stylists/$stylist.getId()">$stylist.getFirstName() $stylist.getLastName()</a></td>
     <td class="center">$stylist.count()</td>
   </tr>

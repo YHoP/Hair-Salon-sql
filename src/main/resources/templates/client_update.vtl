@@ -1,5 +1,28 @@
 <h3>$client.getFirstName() $client.getLastName()</h3>
 
+<table class="table">
+<tr>
+  <td>Current client info:</td>
+  <td></td>
+<tr>
+  <td>First name: </td>
+  <td>$client.getFirstName()</td>
+</tr>
+<tr>
+  <td>Last name: </td>
+  <td>$client.getLastName()</td>
+</tr>
+<tr>
+  <td>Assigned stylist</td>
+  <td>$client.getStylistName()</td>
+</tr>
+  <td>Requests service</td>
+  <td>$client.getServiceDescription()</td>
+</tr>
+</table>
+
+<br>
+
 <form action="/clients/$client.getId()/update" method="post">
 
   <label for="first_name">First name: </label>
@@ -17,7 +40,7 @@
   </select>
 
   <label for="service_id">Requests service: </label>
-  <select id="service_id" name="stylist_id" type="text">
+  <select id="service_id" name="service_id" type="text">
     <option value="$client.getServiceId()">Choose service</option>
     #foreach($service in $services)
       <option value="$service.getId()">$service.getService()</option>

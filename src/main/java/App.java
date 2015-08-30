@@ -121,7 +121,7 @@ public class App {
     model.put("client", thisClient);
     model.put("stylists", Stylist.all());
     model.put("services", Service.all());
-    response.redirect("/stylists/" + stylist_id);
+    response.redirect("/clients/" + client_id);
     return null;
   });
 
