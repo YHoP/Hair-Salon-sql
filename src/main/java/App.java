@@ -12,7 +12,8 @@ public class App {
 
   get("/", (request, response) -> {
     HashMap<String, Object> model = new HashMap<String, Object>();
-    model.put("template", "templates/index.vtl");
+    model.put("stylists", Stylist.all());
+    model.put("template", "templates/stylists.vtl");
     return new ModelAndView(model, layout);
   }, new VelocityTemplateEngine());
 
@@ -121,7 +122,7 @@ public class App {
     model.put("client", thisClient);
     model.put("stylists", Stylist.all());
     model.put("services", Service.all());
-    response.redirect("/stylists/" + stylist_id);
+    response.redirect("/clients/" + client_id);
     return null;
   });
 

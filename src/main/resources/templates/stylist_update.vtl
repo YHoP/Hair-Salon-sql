@@ -1,12 +1,16 @@
-<h2>$stylist.getFirstName() $stylist.getLastName()</h2>
-
-<form action="/stylists/$stylist.getId/update" method="post">
-<div class="form-group">
-  <label for="first_name">First name: </label>
-  <input id="first_name" name="first_name" type="text" value="$stylist.getFirstName()">
-
-  <label for="last_name">  Last name: </label>
-  <input id="last_name" name="last_name" type="text" value="$stylist.getLastName()">
-
-  <button type="submit" class="btn btn-primary">Update</button>
+<h3>Update $stylist.getFirstName() $stylist.getLastName()'s info</h3>
+<br>
+<table>
+<form action="/stylists/$stylist.getId()/update" method="post">
+<tr>
+  <td><label for="first_name">First name: </label></td>
+  <td><input id="first_name" name="first_name" type="text" value="$stylist.getFirstName()"></td>
+  <td></td>
+</tr>
+<tr>
+  <td><label for="last_name">  Last name: </label></td>
+  <td><input id="last_name" name="last_name" type="text" value="$stylist.getLastName()"></td>
+  <td><button type="submit" class="btn btn-primary center">Update</button></td>
+</tr>
 </form>
+</table>

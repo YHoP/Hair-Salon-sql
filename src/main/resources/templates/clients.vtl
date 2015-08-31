@@ -1,20 +1,24 @@
-<h3>Clients List</h3>
+<h3>Client List</h3>
 
-<table class="table">
+<table style="width: 50%">
   <tr>
     <td></td>
+    <td>Edit</td>
     <td>Client</td>
     <td>Preferred stylist</td>
     <td>Requests service</td>
+    <td>Delete</td>
     <td></td>
   </tr>
 #foreach($client in $clients)
 <tr>
-  <td><a href="/clients/$client.getId()/edit">EDIT</a></td>
+  <td></td>
+  <td class="center"><a href="/clients/$client.getId()/edit"><span class="glyphicon glyphicon-pencil"></span></a></td>
   <td><a href="/clients/$client.getId()">$client.getFirstName() $client.getLastName()</a></td>
   <td><a href="/stylists/$client.getStylistId()">$client.getStylistName()</a></td>
   <td>$client.getServiceDescription()</td>
-  <td><a href="/clients/$client.getId()/delete">DELETE</a></td>
+  <td class="center"><a href="/clients/$client.getId()/delete"><span class="glyphicon glyphicon-remove"></span></a></td>
+  <td></td>
 </tr>
 #end
 </table>

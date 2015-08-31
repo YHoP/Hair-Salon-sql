@@ -1,28 +1,53 @@
-<h3>$client.getFirstName() $client.getLastName()</h3>
+<h3>$client.getFirstName() $client.getLastName()'s profile</h3>
 
+<table style="width: 30%">
+  <td>First name: </td>
+  <td>$client.getFirstName()</td>
+</tr>
+<tr>
+  <td>Last name: </td>
+  <td>$client.getLastName()</td>
+</tr>
+<tr>
+  <td>Assigned stylist</td>
+  <td>$client.getStylistName()</td>
+</tr>
+  <td>Requests service</td>
+  <td>$client.getServiceDescription()</td>
+</tr>
+</table>
+<br>
+<h4>Update $client.getFirstName()'s info</h4>
+<table style="width: 40%">
 <form action="/clients/$client.getId()/update" method="post">
-
-  <label for="first_name">First name: </label>
-  <input id="first_name" name="first_name" type="text" value="$client.getFirstName()">
-
-  <label for="last_name">Last name: </label>
-  <input id="last_name" name="last_name" type="text" value="$client.getLastName()">
-
-  <label for="stylist_id">Preferred stylist: </label>
-  <select id="stylist_id" name="stylist_id" type="text">
+<tr>
+  <td><label for="first_name">First name: </label></td>
+  <td><input id="first_name" name="first_name" type="text" value="$client.getFirstName()"></td>
+  <td></td>
+</tr>
+<tr>
+  <td><label for="last_name">Last name: </label></td>
+  <td><input id="last_name" name="last_name" type="text" value="$client.getLastName()"></td>
+</tr>
+<tr>
+  <td><label for="stylist_id">Preferred stylist: </label></td>
+  <td><select id="stylist_id" name="stylist_id" type="text">
     <option value="$client.getStylistId()">Select stylist</option>
     #foreach($stylist in $stylists)
       <option value="$stylist.getId()">$stylist.getFirstName() $stylist.getLastName()</option>
     #end
-  </select>
-
-  <label for="service_id">Requests service: </label>
-  <select id="service_id" name="stylist_id" type="text">
+  </select></td>
+  <td></td>
+</tr>
+<tr>
+  <td><label for="service_id">Requests service: </label></td>
+  <td><select id="service_id" name="service_id" type="text">
     <option value="$client.getServiceId()">Choose service</option>
     #foreach($service in $services)
       <option value="$service.getId()">$service.getService()</option>
     #end
-  </select>
-
-  <button type="submit" class="btn btn-primary">Update</button>
+  </select></td>
+  <td><button type="submit" class="btn btn-primary">Update</button></td>
+</tr>
 </form>
+</table>
