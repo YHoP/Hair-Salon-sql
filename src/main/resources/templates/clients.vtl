@@ -7,8 +7,6 @@
     <td>Client</td>
     <td>Preferred stylist</td>
     <td>Requests service</td>
-    <td>Delete</td>
-    <td></td>
   </tr>
 #foreach($client in $clients)
 <tr>
@@ -17,8 +15,6 @@
   <td><a href="/clients/$client.getId()">$client.getFirstName() $client.getLastName()</a></td>
   <td><a href="/stylists/$client.getStylistId()">$client.getStylistName()</a></td>
   <td>$client.getServiceDescription()</td>
-  <td class="center"><a href="/clients/$client.getId()/delete"><span class="glyphicon glyphicon-remove"></span></a></td>
-  <td></td>
 </tr>
 #end
 </table>
